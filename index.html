@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cálculo mental</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- INICIO -->
+  <div id="s-start" class="screen on">
+    <div style="text-align:center;padding-top:6px">
+      <div class="eyebrow">Juego de cálculo mental</div>
+      <h1>Reta a tu cerebro</h1>
+      <p class="sub">Elige dificultad, resuelve operaciones y encadena aciertos para multiplicar tu puntuación. Tienes 3 vidas.</p>
+    </div>
+
+    <div class="difgrid">
+      <div class="dif sel" data-d="easy"><span class="n">Fácil</span><span class="d">12 s</span></div>
+      <div class="dif" data-d="mid"><span class="n">Medio</span><span class="d">9 s</span></div>
+      <div class="dif" data-d="hard"><span class="n">Difícil</span><span class="d">7 s</span></div>
+    </div>
+
+    <div class="eyebrow" style="margin-bottom:9px">Operaciones</div>
+    <div class="ops">
+      <button class="op sel" data-op="add">Sumas</button>
+      <button class="op sel" data-op="sub">Restas</button>
+      <button class="op" data-op="mul">Multiplicación</button>
+      <button class="op" data-op="div">División</button>
+    </div>
+
+    <button class="btn" id="play">Empezar a jugar</button>
+    <p class="note">También puedes responder con las teclas 1, 2, 3 y 4.</p>
+  </div>
+
+  <!-- JUEGO -->
+  <div id="s-play" class="screen">
+    <div class="hud">
+      <div class="stat"><div class="l">Puntos</div><div class="v" id="score">0</div></div>
+      <div class="stat"><div class="l">Racha</div><div class="v" id="streak">0</div></div>
+      <div class="stat"><div class="l">Vidas</div><div class="hearts" id="hearts"></div></div>
+    </div>
+    <div class="bar"><div class="barfill" id="barfill"></div></div>
+    <div class="qbox">
+      <div class="q" id="q">7 + 5</div>
+      <div class="qsmall" id="qmeta">Pregunta 1</div>
+    </div>
+    <div class="opts" id="opts"></div>
+    <div class="fb" id="fb"></div>
+  </div>
+
+  <!-- FIN -->
+  <div id="s-end" class="screen">
+    <div class="final">
+      <div class="eyebrow" id="endTag">Partida terminada</div>
+      <div class="big" id="endScore" style="margin-top:10px">0</div>
+      <div class="sub" id="endMsg">Puntos</div>
+      <div class="row2">
+        <div class="mini"><div class="l">Aciertos</div><div class="v" id="endAcc">0%</div></div>
+        <div class="mini"><div class="l">Respuestas</div><div class="v" id="endTotal">0</div></div>
+      </div>
+      <div class="rec">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>
+        Récord en <span id="recDiff">fácil</span>: <span id="recVal">0</span>
+      </div>
+    </div>
+    <div class="gap">
+      <button class="btn" id="again">Jugar otra vez</button>
+      <button class="btn ghost" id="menu">Cambiar dificultad</button>
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
